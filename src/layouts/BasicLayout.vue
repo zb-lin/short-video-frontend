@@ -1,28 +1,47 @@
 <template>
   <div id="BasicLayout">
-    <a-layout style="min-height: 100vh">
-      <a-layout-header class="header">
+    <el-container>
+      <el-header class="header" height="40px">
         <GlobalHeader />
-      </a-layout-header>
-      <a-layout class="layout-demo">
-        <a-layout-sider hide-trigger :collapsed="collapsed">
-          <a-menu
-            :defaultOpenKeys="['1']"
-            :defaultSelectedKeys="['0_3']"
-            :style="{ width: '100%' }"
-          >
-            <a-menu-item v-for="item in visibleRoutes" :key="item.path">
-              <icon-star v-if="item.name === '推荐'" />
-              {{ item.name }}
-            </a-menu-item>
-          </a-menu>
-        </a-layout-sider>
-        <a-layout>
+        <el-divider style="margin: 0" />
+      </el-header>
+      <el-container>
+        <el-aside>
+          <el-col :span="16">
+            <el-menu
+              default-active="2"
+              class="el-menu-vertical-demo"
+              @select="handleSelect"
+            >
+              <el-menu-item
+                v-for="item in visibleRoutes"
+                :key="item.path"
+                :index="item.path"
+              >
+                <el-icon>
+                  <House v-if="item.name === '推荐'" />
+                  <User v-else-if="item.name === '已关注'" />
+                  <Compass v-else />
+                </el-icon>
+                <el-text tag="b"> {{ item.name }}</el-text>
+              </el-menu-item>
+            </el-menu>
+            <el-divider />
+            <el-link
+              :underline="false"
+              href="https://github.com/zb-lin?tab=repositories"
+              ><span
+                class="icon iconfont icon-github-fill"
+                style="margin-left: 10px"
+              ></span
+            ></el-link>
+          </el-col>
+        </el-aside>
+        <el-main>
           <router-view />
-        </a-layout>
-      </a-layout>
-      <a-layout-footer class="footer"></a-layout-footer>
-    </a-layout>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 <script setup lang="ts">
@@ -31,10 +50,15 @@ import { computed, ref } from "vue";
 import { routes } from "@/router/routes";
 import checkAccess from "@/access/checkAccess";
 import { useStore } from "vuex";
+import { Compass, House, User } from "@element-plus/icons-vue";
+import router from "@/router";
 
 const store = useStore();
-
+const selectedKeys = ref(["/"]);
 const collapsed = ref(false);
+router.afterEach((to, from, failure) => {
+  selectedKeys.value = [to.path];
+});
 const visibleRoutes = computed(() => {
   return routes.filter((item, index) => {
     if (item.meta?.hideInMenu) {
@@ -46,6 +70,11 @@ const visibleRoutes = computed(() => {
     );
   });
 });
+const handleSelect = (key: string, keyPath: string[]) => {
+  router.push({
+    path: key,
+  });
+};
 </script>
 <style scoped>
 #BasicLayout {

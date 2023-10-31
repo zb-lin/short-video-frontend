@@ -4,8 +4,9 @@
 /* eslint-disable */
 
 export type VideoUpdateRequest = {
-  content?: string;
-  id?: number;
-  tags?: Array<string>;
-  title?: string;
+    content?: string;
+    cover?: string;
+    id?: number;
+    tags?: Array<string>;
+    title?: string;
 };

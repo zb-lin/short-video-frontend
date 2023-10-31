@@ -3,8 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 
-export type BaseResponse_string_ = {
-  code?: number;
-  data?: string;
-  message?: string;
+export type UserFollowAddRequest = {
+    followerId?: number;
+    userId?: number;
 };

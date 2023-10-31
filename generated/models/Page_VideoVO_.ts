@@ -3,18 +3,18 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { OrderItem } from "./OrderItem";
-import type { VideoVO } from "./VideoVO";
+import type { OrderItem } from './OrderItem';
+import type { VideoVO } from './VideoVO';
 
 export type Page_VideoVO_ = {
-  countId?: string;
-  current?: number;
-  maxLimit?: number;
-  optimizeCountSql?: boolean;
-  orders?: Array<OrderItem>;
-  pages?: number;
-  records?: Array<VideoVO>;
-  searchCount?: boolean;
-  size?: number;
-  total?: number;
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: Array<OrderItem>;
+    pages?: number;
+    records?: Array<VideoVO>;
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
 };

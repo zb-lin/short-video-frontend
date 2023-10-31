@@ -3,10 +3,10 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { Page_CommentVO_ } from "./Page_CommentVO_";
+import type { Page_CommentVO_ } from './Page_CommentVO_';
 
 export type BaseResponse_Page_CommentVO_ = {
-  code?: number;
-  data?: Page_CommentVO_;
-  message?: string;
+    code?: number;
+    data?: Page_CommentVO_;
+    message?: string;
 };

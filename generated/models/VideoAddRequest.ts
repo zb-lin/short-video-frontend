@@ -4,8 +4,9 @@
 /* eslint-disable */
 
 export type VideoAddRequest = {
-  content?: string;
-  tags?: Array<string>;
-  title?: string;
-  url?: string;
+    content?: string;
+    cover?: string;
+    tags?: Array<string>;
+    title?: string;
+    url?: string;
 };

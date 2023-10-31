@@ -3,13 +3,13 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { VideoQueryRequest } from "./VideoQueryRequest";
+import type { VideoQueryRequest } from './VideoQueryRequest';
 
 export type VideoFavourQueryRequest = {
-  current?: number;
-  pageSize?: number;
-  sortField?: string;
-  sortOrder?: string;
-  userId?: number;
-  videoQueryRequest?: VideoQueryRequest;
+    current?: number;
+    pageSize?: number;
+    sortField?: string;
+    sortOrder?: string;
+    userId?: number;
+    videoQueryRequest?: VideoQueryRequest;
 };

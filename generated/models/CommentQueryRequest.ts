@@ -4,10 +4,10 @@
 /* eslint-disable */
 
 export type CommentQueryRequest = {
-  current?: number;
-  id?: number;
-  pageSize?: number;
-  sortField?: string;
-  sortOrder?: string;
-  userId?: number;
+    current?: number;
+    pageSize?: number;
+    sortField?: string;
+    sortOrder?: string;
+    userId?: number;
+    videoId?: number;
 };

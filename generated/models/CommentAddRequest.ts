@@ -4,5 +4,6 @@
 /* eslint-disable */
 
 export type CommentAddRequest = {
-  content?: string;
+    content?: string;
+    videoId?: number;
 };

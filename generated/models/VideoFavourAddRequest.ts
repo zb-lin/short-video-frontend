@@ -4,5 +4,5 @@
 /* eslint-disable */
 
 export type VideoFavourAddRequest = {
-  videoId?: number;
+    videoId?: number;
 };

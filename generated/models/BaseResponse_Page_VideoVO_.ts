@@ -3,10 +3,10 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import type { Page_VideoVO_ } from "./Page_VideoVO_";
+import type { Page_VideoVO_ } from './Page_VideoVO_';
 
 export type BaseResponse_Page_VideoVO_ = {
-  code?: number;
-  data?: Page_VideoVO_;
-  message?: string;
+    code?: number;
+    data?: Page_VideoVO_;
+    message?: string;
 };
